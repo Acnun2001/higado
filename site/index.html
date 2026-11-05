@@ -102,7 +102,9 @@
     background: #1a1a1a;
     overflow: hidden;
   }
-  .video-caja iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .video-caja iframe,
+  .video-caja video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .video-caja video { background: #000; object-fit: contain; }
   .video-caja .espera { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #777; font-size: 15px; text-align: center; padding: 24px; }
 
   /* Aviso cuando el video se pausa */
@@ -265,33 +267,32 @@
 </footer>
 
 <script>
-  // ===== LO ÚNICO QUE SE TOCA =====
-  // PANDA_LINK: el link del player de Panda (el que está dentro del src="..." del iframe que da Panda).
-  // SEG_BOTON: segundo del VSL en que se dice el precio (ahí aparece el botón «Próximo paso»).
-  var PANDA_LINK = 'https://player-vz-a884b66d-f7f.tv.pandavideo.com.br/embed/?v=87a07c4e-0853-4eab-a419-2947e0fb7acb';
+  // ===== CONFIGURACIÓN DEL VSL =====
+  var VSL_URL = 'https://incredible-kleicha-dbec41.netlify.app/media/vsl_720p.mp4';
   var SEG_BOTON = 866;
   // =================================
 
-  // Pone el player de Panda (con .com.br, que es el que Impultienda acepta)
+  // Carga el VSL como video HTML5 para que funcione directamente desde Netlify.
   (function () {
-    if (!PANDA_LINK) return;
-    // Acepta el link solo o el código completo que da Panda (saca el src del iframe)
-    var m = PANDA_LINK.match(/src=["']([^"']+)["']/);
-    var src = (m ? m[1] : PANDA_LINK).trim().replace(/\.pandavideo\.com\//, '.pandavideo.com.br/');
-    var f = document.createElement('iframe');
-    f.src = src;
-    f.allow = 'accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture';
-    f.allowFullscreen = true;
-    f.setAttribute('fetchpriority', 'high');
+    if (!VSL_URL) return;
+    var video = document.createElement('video');
+    video.src = VSL_URL;
+    video.controls = true;
+    video.playsInline = true;
+    video.preload = 'metadata';
+    video.setAttribute('controlsList', 'nodownload');
+    video.setAttribute('aria-label', 'Video sobre salud hepática');
+    video.addEventListener('contextmenu', function (e) { e.preventDefault(); });
     var caja = document.getElementById('vsl');
     caja.innerHTML = '';
-    caja.appendChild(f);
+    caja.appendChild(video);
   })();
 
-  // Botón por segundos vistos del VSL (Panda) + aviso de pausa
+  // Botón por segundos vistos del VSL + aviso de pausa.
   (function () {
     var aviso = document.getElementById('avisoPausa');
     var btn = document.getElementById('btnProx');
+    var video = document.querySelector('#vsl video');
     btn.href = location.origin + '/checkout' + location.search;
     var mostrado = false;
     function mostrar() {
@@ -300,22 +301,20 @@
       btn.hidden = false;
       btn.classList.add('visible');
     }
-    // Si ya llegó al botón en otra visita, se muestra de entrada
     try { if (localStorage.getItem('vsl_boton_visto') === '1') mostrar(); } catch (e) {}
     function marcar() { mostrar(); try { localStorage.setItem('vsl_boton_visto', '1'); } catch (e) {} }
 
-    window.addEventListener('message', function (ev) {
-      var host = '';
-      try { host = new URL(ev.origin).hostname; } catch (e) { return; }
-      if (!/(^|\.)pandavideo\.com(\.br)?$/.test(host)) return;
-      var d = ev.data;
-      if (typeof d === 'string') { try { d = JSON.parse(d); } catch (e) { return; } }
-      if (!d) return;
-      if (d.message === 'panda_timeupdate' && d.currentTime >= SEG_BOTON) marcar();
-      if (d.message === 'panda_pause') aviso.hidden = false;
-      if (d.message === 'panda_play' || d.message === 'panda_timeupdate') aviso.hidden = true;
-    });
-    // Respaldo por reloj: si Panda no avisa, se muestra cuando pasó ese tiempo en la página
+    if (video) {
+      video.addEventListener('timeupdate', function () {
+        if (video.currentTime >= SEG_BOTON) marcar();
+        aviso.hidden = true;
+      });
+      video.addEventListener('pause', function () {
+        if (!video.ended) aviso.hidden = false;
+      });
+      video.addEventListener('play', function () { aviso.hidden = true; });
+    }
+    // Respaldo para que el CTA no dependa de eventos del navegador.
     setTimeout(marcar, SEG_BOTON * 1000);
   })();
 </script>
