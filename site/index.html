@@ -116,8 +116,10 @@
   .video-caja .plyr__volume,
   .video-caja .plyr__time { display: none !important; }
   .video-caja .plyr--video .plyr__control--overlaid { width: 60px; height: 60px; background: #0089ff; }
-  .video-caja .plyr__progress__container { flex: 1; }
-  .video-caja .plyr--full-ui input[type=range] { color: #0089ff; }
+  .video-caja .plyr__progress__container { flex: 1; pointer-events: none; }
+  .video-caja .plyr--full-ui input[type=range] { color: #0089ff; pointer-events: none !important; touch-action: none; }
+  .video-caja .plyr__progress input[type=range] { pointer-events: none !important; }
+  .video-caja .plyr__progress__buffer { pointer-events: none !important; }
 
   /* Aviso cuando el video se pausa */
   .aviso-pausa {
@@ -299,6 +301,17 @@
       tooltips: { controls: false, seek: false },
       hideControls: true,
       clickToPlay: true
+    });
+    videoEl.addEventListener('seeking', function () {
+      if (videoEl.currentTime > lastTime + 0.5) videoEl.currentTime = lastTime;
+    });
+    videoEl.addEventListener('timeupdate', function () {
+      if (videoEl.currentTime > lastTime + 0.5) { videoEl.currentTime = lastTime; return; }
+      lastTime = videoEl.currentTime;
+    });
+    var lastTime = 0;
+    videoEl.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'ArrowUp' || e.key === 'ArrowDown') e.preventDefault();
     });
   })();
 
