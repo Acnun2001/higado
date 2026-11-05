@@ -105,6 +105,14 @@
   .video-caja iframe,
   .video-caja video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .video-caja video { background: #000; object-fit: contain; }
+  .video-caja .vsl-play { position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); width: 72px; height: 72px; border: 0; border-radius: 50%; background: #0089ff; color: #fff; cursor: pointer; box-shadow: 0 6px 22px rgba(0, 0, 0, .45); z-index: 2; font-size: 0; transition: transform .2s ease, opacity .2s ease; }
+  .video-caja .vsl-play::before { content: ''; display: block; width: 0; height: 0; margin-left: 5px; border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 18px solid currentColor; }
+  .video-caja .vsl-play:hover { transform: translate(-50%, -50%) scale(1.06); }
+  .video-caja .vsl-play[hidden] { display: none; }
+  .vsl-progress { height: 6px; margin: 8px 16px 0; overflow: hidden; border-radius: 999px; background: #d8d8d8; }
+  .vsl-progress i { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #0066cc, #0089ff); }
+  .vsl-progress i::after { content: ''; position: absolute; right: -6px; top: 50%; transform: translateY(-50%); width: 12px; height: 12px; border-radius: 50%; background: #0089ff; box-shadow: 0 0 8px rgba(0, 137, 255, .6); }
+  .vsl-progress i { position: relative; }
   .video-caja .espera { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #777; font-size: 15px; text-align: center; padding: 24px; }
 
   /* Aviso cuando el video se pausa */
@@ -277,16 +285,44 @@
     if (!VSL_URL) return;
     var video = document.createElement('video');
     video.src = VSL_URL;
-    video.controls = true;
+    video.controls = false;
     video.playsInline = true;
     video.preload = 'metadata';
     video.poster = 'https://incredible-kleicha-dbec41.netlify.app/media/thumbnail.jpg';
-    video.setAttribute('controlsList', 'nodownload');
+    video.tabIndex = -1;
     video.setAttribute('aria-label', 'Video sobre salud hepática');
     video.addEventListener('contextmenu', function (e) { e.preventDefault(); });
     var caja = document.getElementById('vsl');
+    var play = document.createElement('button');
+    play.type = 'button';
+    play.className = 'vsl-play';
+    play.setAttribute('aria-label', 'Reproducir video');
+    var progress = document.createElement('div');
+    progress.className = 'vsl-progress';
+    progress.setAttribute('aria-hidden', 'true');
+    progress.innerHTML = '<i></i>';
     caja.innerHTML = '';
     caja.appendChild(video);
+    caja.appendChild(play);
+    caja.parentNode.appendChild(progress);
+    play.addEventListener('click', function () {
+      if (video.paused) video.play().catch(function () {});
+      else video.pause();
+    });
+    video.addEventListener('play', function () { play.hidden = true; });
+    video.addEventListener('pause', function () { play.hidden = false; });
+    video.addEventListener('ended', function () { play.hidden = false; });
+    var barFill = progress.firstElementChild;
+    var rafId = null;
+    function tick() {
+      var percent = video.duration ? (video.currentTime / video.duration) * 100 : 0;
+      barFill.style.width = percent + '%';
+      rafId = requestAnimationFrame(tick);
+    }
+    video.addEventListener('play', function () { if (!rafId) tick(); });
+    video.addEventListener('pause', function () { if (rafId) { cancelAnimationFrame(rafId); rafId = null; } var percent = video.duration ? (video.currentTime / video.duration) * 100 : 0; barFill.style.width = percent + '%'; });
+    video.addEventListener('ended', function () { if (rafId) { cancelAnimationFrame(rafId); rafId = null; } barFill.style.width = '100%'; });
+    video.addEventListener('seeked', function () { var percent = video.duration ? (video.currentTime / video.duration) * 100 : 0; barFill.style.width = percent + '%'; });
   })();
 
   // Botón por segundos vistos del VSL + aviso de pausa.
