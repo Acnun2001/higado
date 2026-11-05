@@ -1,0 +1,248 @@
+[
+  {
+    "url": "https://higado-sano.impultienda.ar/_astro/checkout.P76tsJZk.css",
+    "file": "checkout/assets/checkout.P76tsJZk.css",
+    "bytes": 39030,
+    "type": "text/css; charset=utf-8"
+  },
+  {
+    "url": "https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/render/image/public/ebook-images/f86c2bd0-67e2-4286-bfe7-037599c80599/product-uploads/mcp_e592b6df-3556-44f9-9e91-2c32aa69dea7_1792797978947.png?width=800&quality=75&resize=contain",
+    "file": "checkout/assets/mcp_e592b6df-3556-44f9-9e91-2c32aa69dea7_1792797978947-61084606.png",
+    "bytes": 508838,
+    "type": "image/png"
+  },
+  {
+    "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap",
+    "file": "checkout/assets/css2-7821e63b.css",
+    "bytes": 2600,
+    "type": "text/css; charset=utf-8"
+  },
+  {
+    "url": "https://higado-sano.impultienda.ar/_astro/_slug_.K-5Jo9uw.css",
+    "file": "checkout/assets/_slug_.K-5Jo9uw.css",
+    "bytes": 4700,
+    "type": "text/css; charset=utf-8"
+  },
+  {
+    "url": "https://higado-sano.impultienda.ar/_astro/base.6hhVN6Yt.css",
+    "file": "checkout/assets/base.6hhVN6Yt.css",
+    "bytes": 87345,
+    "type": "text/css; charset=utf-8"
+  },
+  {
+    "url": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&display=swap",
+    "file": "checkout/assets/css2-07a36a7f.css",
+    "bytes": 705,
+    "type": "text/css; charset=utf-8"
+  },
+  {
+    "url": "https://higado-sano.impultienda.ar/_astro/perfectpay.D2lf2bpT.css",
+    "file": "checkout/assets/perfectpay.D2lf2bpT.css",
+    "bytes": 1391,
+    "type": "text/css; charset=utf-8"
+  },
+  {
+    "url": "https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/render/image/public/store-resources/f86c2bd0-67e2-4286-bfe7-037599c80599/1792799499745_abg-vale.webp?width=480&quality=75&resize=contain",
+    "file": "checkout/assets/1792799499745_abg-vale-a81e7e9b.webp",
+    "bytes": 31557,
+    "type": "image/jpeg"
+  },
+  {
+    "url": "https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/render/image/public/store-resources/f86c2bd0-67e2-4286-bfe7-037599c80599/1792799498380_abg-sole.webp?width=480&quality=75&resize=contain",
+    "file": "checkout/assets/1792799498380_abg-sole-c15d8e77.webp",
+    "bytes": 36769,
+    "type": "image/jpeg"
+  },
+  {
+    "url": "https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/render/image/public/store-resources/f86c2bd0-67e2-4286-bfe7-037599c80599/1792799497597_abg-micaela.webp?width=480&quality=75&resize=contain",
+    "file": "checkout/assets/1792799497597_abg-micaela-98e5cfa3.webp",
+    "bytes": 35653,
+    "type": "image/jpeg"
+  },
+  {
+    "url": "https://higado-sano.impultienda.ar/mercadopago.svg",
+    "file": "checkout/assets/mercadopago.svg",
+    "bytes": 7425,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://higado-sano.impultienda.ar/visa.svg",
+    "file": "checkout/assets/visa.svg",
+    "bytes": 1330,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://higado-sano.impultienda.ar/mastercard.svg",
+    "file": "checkout/assets/mastercard.svg",
+    "bytes": 573,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://higado-sano.impultienda.ar/amex.svg",
+    "file": "checkout/assets/amex.svg",
+    "bytes": 1538,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://higado-sano.impultienda.ar/diners.svg",
+    "file": "checkout/assets/diners.svg",
+    "bytes": 657,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/css/intlTelInput.css",
+    "file": "checkout/assets/intlTelInput.css",
+    "bytes": 16444,
+    "type": "text/css; charset=utf-8"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/intlTelInputWithUtils.min.js",
+    "file": "checkout/assets/intlTelInputWithUtils.min.js",
+    "bytes": 299707,
+    "type": "application/javascript; charset=utf-8"
+  },
+  {
+    "url": "https://higado-sano.impultienda.ar/_astro/checkout.astro_astro_type_script_index_0_lang.qnN8ZpAV.js",
+    "file": "checkout/assets/checkout.astro_astro_type_script_index_0_lang.qnN8ZpAV.js",
+    "bytes": 71,
+    "type": "text/javascript; charset=utf-8"
+  },
+  {
+    "url": "https://higado-sano.impultienda.ar/_astro/checkout.astro_astro_type_script_index_1_lang.CI3BNzhl.js",
+    "file": "checkout/assets/checkout.astro_astro_type_script_index_1_lang.CI3BNzhl.js",
+    "bytes": 71,
+    "type": "text/javascript; charset=utf-8"
+  },
+  {
+    "url": "https://higado-sano.impultienda.ar/_astro/checkout.astro_astro_type_script_index_2_lang.yQvsNz3N.js",
+    "file": "checkout/assets/checkout.astro_astro_type_script_index_2_lang.yQvsNz3N.js",
+    "bytes": 106,
+    "type": "text/javascript; charset=utf-8"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf",
+    "file": "checkout/assets/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf",
+    "bytes": 324820,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fMZg.ttf",
+    "file": "checkout/assets/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fMZg.ttf",
+    "bytes": 325304,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf",
+    "file": "checkout/assets/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf",
+    "bytes": 326048,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZg.ttf",
+    "file": "checkout/assets/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZg.ttf",
+    "bytes": 326468,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuDyYMZg.ttf",
+    "file": "checkout/assets/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuDyYMZg.ttf",
+    "bytes": 327324,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuBWYMZg.ttf",
+    "file": "checkout/assets/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuBWYMZg.ttf",
+    "bytes": 327260,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrFJA.ttf",
+    "file": "checkout/assets/pxiEyp8kv8JHgFVrFJA.ttf",
+    "bytes": 154628,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9V1s.ttf",
+    "file": "checkout/assets/pxiByp8kv8JHgFVrLGT9V1s.ttf",
+    "bytes": 152860,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6V1s.ttf",
+    "file": "checkout/assets/pxiByp8kv8JHgFVrLEj6V1s.ttf",
+    "bytes": 151516,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7V1s.ttf",
+    "file": "checkout/assets/pxiByp8kv8JHgFVrLCz7V1s.ttf",
+    "bytes": 150292,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDD4V1s.ttf",
+    "file": "checkout/assets/pxiByp8kv8JHgFVrLDD4V1s.ttf",
+    "bytes": 149072,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLBT5V1s.ttf",
+    "file": "checkout/assets/pxiByp8kv8JHgFVrLBT5V1s.ttf",
+    "bytes": 147708,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAkJxhTg.ttf",
+    "file": "checkout/assets/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAkJxhTg.ttf",
+    "bytes": 48308,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAfJthTg.ttf",
+    "file": "checkout/assets/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAfJthTg.ttf",
+    "bytes": 48280,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwARZthTg.ttf",
+    "file": "checkout/assets/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwARZthTg.ttf",
+    "bytes": 48200,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/img/flags.webp",
+    "file": "checkout/assets/flags.webp",
+    "bytes": 28174,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/img/flags@2x.webp",
+    "file": "checkout/assets/flags@2x.webp",
+    "bytes": 66546,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/img/globe.webp",
+    "file": "checkout/assets/globe.webp",
+    "bytes": 514,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/img/globe@2x.webp",
+    "file": "checkout/assets/globe@2x.webp",
+    "bytes": 1380,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/ebook-images/8c196250-ffac-4b01-96e7-4614ca757c1c/product-uploads/cyber-monday-logo-3010.png",
+    "file": "checkout/assets/cyber-monday-logo-3010.png",
+    "bytes": 57789,
+    "type": "image/png"
+  },
+  {
+    "url": "https://sb.impultienda.ar/storage/v1/render/image/public/ebook-images/f86c2bd0-67e2-4286-bfe7-037599c80599/d77427f9-fe13-46a5-88b0-b2230247135c-mockup.png?t=1793484407199&width=400&quality=75&resize=contain",
+    "file": "checkout/assets/d77427f9-fe13-46a5-88b0-b2230247135c-mockup-ca836f30.png",
+    "bytes": 151112,
+    "type": "image/png"
+  }
+]

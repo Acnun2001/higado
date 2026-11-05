@@ -1,0 +1,11 @@
+Percurso da avaliação (respostas de demonstração, não dados do usuário)
+
+1/5 — ¿Cuántos años tenés? → Entre 30 y 39
+2/5 — ¿Cuánto pesás hoy, más o menos? → Menos de 65 kg
+3/5 — ¿Cuánto medís? → Entre 1,55 y 1,65 m
+4/5 — ¿Qué es lo que más te molesta hoy? → La panza hinchada y dura
+5/5 — ¿Cuál es tu objetivo? → Bajar hasta 5 kg
+
+Resultado exibido pelo site: Ritual Rojo del Hígado +30, com foco em “deshinchar la panza”. O botão “Quiero mi plan ahora” abre https://higado-sano.impultienda.ar/checkout.
+
+As escolhas foram usadas apenas para percorrer o fluxo em navegador. Nenhum dado de identificação foi digitado nem nenhum pagamento foi enviado.
