@@ -1,0 +1,242 @@
+[
+  {
+    "url": "https://higado-sano.impultienda.ar/_astro/index.astro_astro_type_script_index_0_lang.B4wS0Iuu.js",
+    "file": "site/downloaded/index.astro_astro_type_script_index_0_lang.B4wS0Iuu.js",
+    "bytes": 3627,
+    "content_type": "text/javascript; charset=utf-8"
+  },
+  {
+    "url": "https://higado-sano.impultienda.ar/_astro/global.CTLRVNJL.css",
+    "file": "site/global.CTLRVNJL.css",
+    "bytes": 63496,
+    "content_type": "text/css; charset=utf-8"
+  },
+  {
+    "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Nunito:wght@400;500;600;700;800;900&family=Bungee&family=Chakra+Petch:wght@400;500;600;700&display=swap",
+    "file": "site/fonts/site-fonts-main.css",
+    "bytes": 6340,
+    "content_type": "text/css; charset=utf-8"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/bungee/v17/N0bU2SZBIuF2PU_ECg.ttf",
+    "file": "site/fonts/N0bU2SZBIuF2PU_ECg.ttf",
+    "bytes": 110456,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/chakrapetch/v13/cIf6MapbsEk7TDLdtEz1BwkmmA.ttf",
+    "file": "site/fonts/cIf6MapbsEk7TDLdtEz1BwkmmA.ttf",
+    "bytes": 70260,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/chakrapetch/v13/cIflMapbsEk7TDLdtEz1BwkebIlFQA.ttf",
+    "file": "site/fonts/cIflMapbsEk7TDLdtEz1BwkebIlFQA.ttf",
+    "bytes": 70252,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/chakrapetch/v13/cIflMapbsEk7TDLdtEz1BwkeQI5FQA.ttf",
+    "file": "site/fonts/cIflMapbsEk7TDLdtEz1BwkeQI5FQA.ttf",
+    "bytes": 70240,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/chakrapetch/v13/cIflMapbsEk7TDLdtEz1BwkeJI9FQA.ttf",
+    "file": "site/fonts/cIflMapbsEk7TDLdtEz1BwkeJI9FQA.ttf",
+    "bytes": 70140,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf",
+    "file": "site/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf",
+    "bytes": 324820,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fMZg.ttf",
+    "file": "site/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fMZg.ttf",
+    "bytes": 325304,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf",
+    "file": "site/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf",
+    "bytes": 326048,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZg.ttf",
+    "file": "site/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZg.ttf",
+    "bytes": 326468,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuDyYMZg.ttf",
+    "file": "site/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuDyYMZg.ttf",
+    "bytes": 327324,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuBWYMZg.ttf",
+    "file": "site/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuBWYMZg.ttf",
+    "bytes": 327260,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTM.ttf",
+    "file": "site/fonts/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTM.ttf",
+    "bytes": 125528,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDIkhRTM.ttf",
+    "file": "site/fonts/XRXI3I6Li01BKofiOc5wtlZ2di8HDIkhRTM.ttf",
+    "bytes": 125652,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDGUmRTM.ttf",
+    "file": "site/fonts/XRXI3I6Li01BKofiOc5wtlZ2di8HDGUmRTM.ttf",
+    "bytes": 125536,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDFwmRTM.ttf",
+    "file": "site/fonts/XRXI3I6Li01BKofiOc5wtlZ2di8HDFwmRTM.ttf",
+    "bytes": 125464,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDDsmRTM.ttf",
+    "file": "site/fonts/XRXI3I6Li01BKofiOc5wtlZ2di8HDDsmRTM.ttf",
+    "bytes": 125416,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDBImRTM.ttf",
+    "file": "site/fonts/XRXI3I6Li01BKofiOc5wtlZ2di8HDBImRTM.ttf",
+    "bytes": 125376,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrFJA.ttf",
+    "file": "site/fonts/pxiEyp8kv8JHgFVrFJA.ttf",
+    "bytes": 154628,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9V1s.ttf",
+    "file": "site/fonts/pxiByp8kv8JHgFVrLGT9V1s.ttf",
+    "bytes": 152860,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6V1s.ttf",
+    "file": "site/fonts/pxiByp8kv8JHgFVrLEj6V1s.ttf",
+    "bytes": 151516,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7V1s.ttf",
+    "file": "site/fonts/pxiByp8kv8JHgFVrLCz7V1s.ttf",
+    "bytes": 150292,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDD4V1s.ttf",
+    "file": "site/fonts/pxiByp8kv8JHgFVrLDD4V1s.ttf",
+    "bytes": 149072,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLBT5V1s.ttf",
+    "file": "site/fonts/pxiByp8kv8JHgFVrLBT5V1s.ttf",
+    "bytes": 147708,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/spacegrotesk/v22/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7oUUsj.ttf",
+    "file": "site/fonts/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7oUUsj.ttf",
+    "bytes": 69360,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/spacegrotesk/v22/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7aUUsj.ttf",
+    "file": "site/fonts/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7aUUsj.ttf",
+    "bytes": 69416,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/spacegrotesk/v22/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj42Vksj.ttf",
+    "file": "site/fonts/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj42Vksj.ttf",
+    "bytes": 69356,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/spacegrotesk/v22/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj4PVksj.ttf",
+    "file": "site/fonts/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj4PVksj.ttf",
+    "bytes": 69308,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/spacemono/v17/i7dPIFZifjKcF5UAWdDRUEY.ttf",
+    "file": "site/fonts/i7dPIFZifjKcF5UAWdDRUEY.ttf",
+    "bytes": 81124,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/spacemono/v17/i7dMIFZifjKcF5UAWdDRaPpZYFI.ttf",
+    "file": "site/fonts/i7dMIFZifjKcF5UAWdDRaPpZYFI.ttf",
+    "bytes": 79904,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://higado-sano.impultienda.ar/_astro/_slug_.K-5Jo9uw.css",
+    "file": "site/_slug_.K-5Jo9uw.css",
+    "bytes": 4700,
+    "content_type": "text/css; charset=utf-8"
+  },
+  {
+    "url": "https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@500;600;700;800;900&display=swap",
+    "file": "site/fonts/anton-poppins.css",
+    "bytes": 1219,
+    "content_type": "text/css; charset=utf-8"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/anton/v27/1Ptgg87LROyAm0K0.ttf",
+    "file": "site/fonts/1Ptgg87LROyAm0K0.ttf",
+    "bytes": 130324,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9V1s.ttf",
+    "file": "site/fonts/pxiByp8kv8JHgFVrLGT9V1s.ttf",
+    "bytes": 152860,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6V1s.ttf",
+    "file": "site/fonts/pxiByp8kv8JHgFVrLEj6V1s.ttf",
+    "bytes": 151516,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7V1s.ttf",
+    "file": "site/fonts/pxiByp8kv8JHgFVrLCz7V1s.ttf",
+    "bytes": 150292,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDD4V1s.ttf",
+    "file": "site/fonts/pxiByp8kv8JHgFVrLDD4V1s.ttf",
+    "bytes": 149072,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLBT5V1s.ttf",
+    "file": "site/fonts/pxiByp8kv8JHgFVrLBT5V1s.ttf",
+    "bytes": 147708,
+    "content_type": "font/ttf"
+  }
+]
