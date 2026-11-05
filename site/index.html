@@ -110,7 +110,9 @@
   .video-caja .vsl-play:hover { transform: translate(-50%, -50%) scale(1.06); }
   .video-caja .vsl-play[hidden] { display: none; }
   .vsl-progress { height: 6px; margin: 8px 16px 0; overflow: hidden; border-radius: 999px; background: #d8d8d8; }
-  .vsl-progress i { display: block; width: 0; height: 100%; border-radius: inherit; background: #0089ff; transition: width .15s linear; }
+  .vsl-progress i { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #0066cc, #0089ff); }
+  .vsl-progress i::after { content: ''; position: absolute; right: -6px; top: 50%; transform: translateY(-50%); width: 12px; height: 12px; border-radius: 50%; background: #0089ff; box-shadow: 0 0 8px rgba(0, 137, 255, .6); }
+  .vsl-progress i { position: relative; }
   .video-caja .espera { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #777; font-size: 15px; text-align: center; padding: 24px; }
 
   /* Aviso cuando el video se pausa */
@@ -310,10 +312,17 @@
     video.addEventListener('play', function () { play.hidden = true; });
     video.addEventListener('pause', function () { play.hidden = false; });
     video.addEventListener('ended', function () { play.hidden = false; });
-    video.addEventListener('timeupdate', function () {
+    var barFill = progress.firstElementChild;
+    var rafId = null;
+    function tick() {
       var percent = video.duration ? (video.currentTime / video.duration) * 100 : 0;
-      progress.firstElementChild.style.width = percent + '%';
-    });
+      barFill.style.width = percent + '%';
+      rafId = requestAnimationFrame(tick);
+    }
+    video.addEventListener('play', function () { if (!rafId) tick(); });
+    video.addEventListener('pause', function () { if (rafId) { cancelAnimationFrame(rafId); rafId = null; } var percent = video.duration ? (video.currentTime / video.duration) * 100 : 0; barFill.style.width = percent + '%'; });
+    video.addEventListener('ended', function () { if (rafId) { cancelAnimationFrame(rafId); rafId = null; } barFill.style.width = '100%'; });
+    video.addEventListener('seeked', function () { var percent = video.duration ? (video.currentTime / video.duration) * 100 : 0; barFill.style.width = percent + '%'; });
   })();
 
   // Botón por segundos vistos del VSL + aviso de pausa.
