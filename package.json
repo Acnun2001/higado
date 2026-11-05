@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "echo 'Static site, no build step needed'",
-    "dev": "echo 'Static site, no dev server needed'"
+    "build": "node build.mjs",
+    "dev": "node -e \"console.log('Static site')\""
   }
 }
