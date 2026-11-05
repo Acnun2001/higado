@@ -102,18 +102,22 @@
     background: #1a1a1a;
     overflow: hidden;
   }
-  .video-caja iframe,
-  .video-caja video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .video-caja video { background: #000; object-fit: contain; }
-  .video-caja .vsl-play { position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); width: 72px; height: 72px; border: 0; border-radius: 50%; background: #0089ff; color: #fff; cursor: pointer; box-shadow: 0 6px 22px rgba(0, 0, 0, .45); z-index: 2; font-size: 0; transition: transform .2s ease, opacity .2s ease; }
-  .video-caja .vsl-play::before { content: ''; display: block; width: 0; height: 0; margin-left: 5px; border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 18px solid currentColor; }
-  .video-caja .vsl-play:hover { transform: translate(-50%, -50%) scale(1.06); }
-  .video-caja .vsl-play[hidden] { display: none; }
-  .vsl-progress { height: 6px; margin: 8px 16px 0; overflow: hidden; border-radius: 999px; background: #d8d8d8; }
-  .vsl-progress i { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #0066cc, #0089ff); }
-  .vsl-progress i::after { content: ''; position: absolute; right: -6px; top: 50%; transform: translateY(-50%); width: 12px; height: 12px; border-radius: 50%; background: #0089ff; box-shadow: 0 0 8px rgba(0, 137, 255, .6); }
-  .vsl-progress i { position: relative; }
+  .video-caja { position: relative; background: #000; overflow: hidden; width: 100%; aspect-ratio: 9 / 16; margin: 0 auto; }
+  .video-caja video { width: 100%; height: 100%; object-fit: contain; background: #000; }
   .video-caja .espera { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #777; font-size: 15px; text-align: center; padding: 24px; }
+  .video-caja .plyr { width: 100%; height: 100%; background: #000; --plyr-color-main: #0089ff; }
+  .video-caja .plyr__video-wrapper { height: 100%; }
+  .video-caja .plyr--video .plyr__controls { background: linear-gradient(transparent, rgba(0,0,0,.85)); padding: 35px 10px 10px; }
+  .video-caja .plyr--video .plyr__control[data-plyr="settings"],
+  .video-caja .plyr--video .plyr__control[data-plyr="pip"],
+  .video-caja .plyr--video .plyr__control[data-plyr="captions"],
+  .video-caja .plyr--video .plyr__control[data-plyr="airplay"],
+  .video-caja .plyr--video .plyr__download,
+  .video-caja .plyr__volume,
+  .video-caja .plyr__time { display: none !important; }
+  .video-caja .plyr--video .plyr__control--overlaid { width: 60px; height: 60px; background: #0089ff; }
+  .video-caja .plyr__progress__container { flex: 1; }
+  .video-caja .plyr--full-ui input[type=range] { color: #0089ff; }
 
   /* Aviso cuando el video se pausa */
   .aviso-pausa {
@@ -274,55 +278,28 @@
 <!-- TERMINOS v3 --><p style="font-size:11px;line-height:1.5;color:#8a8a8a;margin:10px 0 0;text-align:center"><a href="https://menteproposito.com/pages/terminos-y-condiciones" target="_blank" rel="noopener" style="color:#8a8a8a;text-decoration:underline">*La garantía está atada a los Términos y condiciones</a></p><!-- /TERMINOS v3 -->
 </footer>
 
+<link rel="stylesheet" href="./player_css_plyr.css">
+<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 <script>
   // ===== CONFIGURACIÓN DEL VSL =====
   var VSL_URL = 'https://incredible-kleicha-dbec41.netlify.app/media/vsl_720p.mp4';
   var SEG_BOTON = 866;
   // =================================
 
-  // Carga el VSL como video HTML5 para que funcione directamente desde Netlify.
   (function () {
     if (!VSL_URL) return;
-    var video = document.createElement('video');
-    video.src = VSL_URL;
-    video.controls = false;
-    video.playsInline = true;
-    video.preload = 'metadata';
-    video.poster = 'https://incredible-kleicha-dbec41.netlify.app/media/thumbnail.jpg';
-    video.tabIndex = -1;
-    video.setAttribute('aria-label', 'Video sobre salud hepática');
-    video.addEventListener('contextmenu', function (e) { e.preventDefault(); });
     var caja = document.getElementById('vsl');
-    var play = document.createElement('button');
-    play.type = 'button';
-    play.className = 'vsl-play';
-    play.setAttribute('aria-label', 'Reproducir video');
-    var progress = document.createElement('div');
-    progress.className = 'vsl-progress';
-    progress.setAttribute('aria-hidden', 'true');
-    progress.innerHTML = '<i></i>';
-    caja.innerHTML = '';
-    caja.appendChild(video);
-    caja.appendChild(play);
-    caja.parentNode.appendChild(progress);
-    play.addEventListener('click', function () {
-      if (video.paused) video.play().catch(function () {});
-      else video.pause();
+    caja.innerHTML = '<video playsinline poster="https://incredible-kleicha-dbec41.netlify.app/media/thumbnail.jpg"><source src="' + VSL_URL + '" type="video/mp4"></video>';
+    var videoEl = caja.querySelector('video');
+    videoEl.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+    var player = new Plyr(videoEl, {
+      controls: ['play', 'progress', 'fullscreen'],
+      settings: [],
+      keyboard: { focused: false, global: false },
+      tooltips: { controls: false, seek: false },
+      hideControls: true,
+      clickToPlay: true
     });
-    video.addEventListener('play', function () { play.hidden = true; });
-    video.addEventListener('pause', function () { play.hidden = false; });
-    video.addEventListener('ended', function () { play.hidden = false; });
-    var barFill = progress.firstElementChild;
-    var rafId = null;
-    function tick() {
-      var percent = video.duration ? (video.currentTime / video.duration) * 100 : 0;
-      barFill.style.width = percent + '%';
-      rafId = requestAnimationFrame(tick);
-    }
-    video.addEventListener('play', function () { if (!rafId) tick(); });
-    video.addEventListener('pause', function () { if (rafId) { cancelAnimationFrame(rafId); rafId = null; } var percent = video.duration ? (video.currentTime / video.duration) * 100 : 0; barFill.style.width = percent + '%'; });
-    video.addEventListener('ended', function () { if (rafId) { cancelAnimationFrame(rafId); rafId = null; } barFill.style.width = '100%'; });
-    video.addEventListener('seeked', function () { var percent = video.duration ? (video.currentTime / video.duration) * 100 : 0; barFill.style.width = percent + '%'; });
   })();
 
   // Botón por segundos vistos del VSL + aviso de pausa.
@@ -330,6 +307,7 @@
     var aviso = document.getElementById('avisoPausa');
     var btn = document.getElementById('btnProx');
     var video = document.querySelector('#vsl video');
+    if (video) video._plyrReady = true;
     btn.href = location.origin + '/checkout' + location.search;
     var mostrado = false;
     function mostrar() {
