@@ -107,7 +107,9 @@
   .video-caja .espera { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #777; font-size: 15px; text-align: center; padding: 24px; }
   .video-caja .plyr { width: 100%; height: 100%; background: #000; --plyr-color-main: #0089ff; }
   .video-caja .plyr__video-wrapper { height: 100%; }
-  .video-caja .plyr--video .plyr__controls { background: linear-gradient(transparent, rgba(0,0,0,.85)); padding: 35px 10px 10px; }
+  .video-caja .plyr--video .plyr__controls { display: none !important; }
+  .video-caja .vsl-progreso { position: absolute; z-index: 10; left: 0; right: 0; bottom: 0; height: 4px; background: #050505; pointer-events: none; }
+  .video-caja .vsl-progreso i { display: block; width: 0; height: 100%; background: #4478e8; }
   .video-caja .plyr--video .plyr__control[data-plyr="settings"],
   .video-caja .plyr--video .plyr__control[data-plyr="pip"],
   .video-caja .plyr--video .plyr__control[data-plyr="captions"],
@@ -291,8 +293,9 @@
   (function () {
     if (!VSL_URL) return;
     var caja = document.getElementById('vsl');
-    caja.innerHTML = '<video playsinline poster="https://incredible-kleicha-dbec41.netlify.app/media/thumbnail.jpg"><source src="' + VSL_URL + '" type="video/mp4"></video>';
+    caja.innerHTML = '<video playsinline poster="https://incredible-kleicha-dbec41.netlify.app/media/thumbnail.jpg"><source src="' + VSL_URL + '" type="video/mp4"></video><div class="vsl-progreso" aria-hidden="true"><i></i></div>';
     var videoEl = caja.querySelector('video');
+    var progresso = caja.querySelector('.vsl-progreso i');
     videoEl.addEventListener('contextmenu', function (e) { e.preventDefault(); });
     var player = new Plyr(videoEl, {
       controls: ['play', 'progress', 'fullscreen'],
@@ -302,8 +305,20 @@
       hideControls: true,
       clickToPlay: true
     });
+    var progressoFrame = null;
+    function atualizarProgresso() {
+      progresso.style.width = (videoEl.duration ? videoEl.currentTime / videoEl.duration * 100 : 0) + '%';
+      if (!videoEl.paused && !videoEl.ended) progressoFrame = requestAnimationFrame(atualizarProgresso);
+      else progressoFrame = null;
+    }
+    videoEl.addEventListener('play', function () { if (!progressoFrame) atualizarProgresso(); });
+    videoEl.addEventListener('pause', atualizarProgresso);
+    videoEl.addEventListener('ended', atualizarProgresso);
+    videoEl.addEventListener('timeupdate', atualizarProgresso);
+    videoEl.addEventListener('loadedmetadata', atualizarProgresso);
     videoEl.addEventListener('seeking', function () {
       if (videoEl.currentTime > lastTime + 0.5) videoEl.currentTime = lastTime;
+      atualizarProgresso();
     });
     videoEl.addEventListener('timeupdate', function () {
       if (videoEl.currentTime > lastTime + 0.5) { videoEl.currentTime = lastTime; return; }
