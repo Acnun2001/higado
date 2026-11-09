@@ -303,6 +303,10 @@
     var progressoBar = caja.querySelector('.vsl-progreso');
     videoEl.addEventListener('contextmenu', function (e) { e.preventDefault(); });
     iniciar.addEventListener('click', function () { videoEl.play().catch(function () {}); });
+    videoEl.addEventListener('click', function () {
+      if (videoEl.paused) videoEl.play().catch(function () {});
+      else videoEl.pause();
+    });
     videoEl.addEventListener('play', function () { iniciar.hidden = true; });
     videoEl.addEventListener('pause', function () { if (!videoEl.ended) iniciar.hidden = false; });
     var player = new Plyr(videoEl, {
@@ -311,12 +315,20 @@
       keyboard: { focused: false, global: false },
       tooltips: { controls: false, seek: false },
       hideControls: true,
-      clickToPlay: true
+      clickToPlay: false
     });
     caja.appendChild(progressoBar);
     var progressoFrame = null;
+    function percentualProgresso() {
+      var tempo = videoEl.currentTime;
+      var duracao = videoEl.duration;
+      if (!duracao || !isFinite(duracao)) return 0;
+      if (tempo <= 60) return tempo * 0.5;
+      if (tempo <= 120) return 30 + (tempo - 60) * 0.5;
+      return 60 + Math.min(40, (tempo - 120) / Math.max(1, duracao - 120) * 40);
+    }
     function atualizarProgresso() {
-      progresso.style.width = (videoEl.duration ? videoEl.currentTime / videoEl.duration * 100 : 0) + '%';
+      progresso.style.width = percentualProgresso() + '%';
       if (!videoEl.paused && !videoEl.ended) progressoFrame = requestAnimationFrame(atualizarProgresso);
       else progressoFrame = null;
     }
