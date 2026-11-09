@@ -110,6 +110,9 @@
   .video-caja .plyr--video .plyr__controls { display: none !important; }
   .video-caja .vsl-progreso { position: absolute; z-index: 10; left: 0; right: 0; bottom: 0; height: 4px; background: #050505; pointer-events: none; }
   .video-caja .vsl-progreso i { display: block; width: 0; height: 100%; background: #4478e8; }
+  .video-caja .vsl-iniciar { position: absolute; z-index: 11; top: 50%; left: 50%; width: 64px; height: 64px; transform: translate(-50%, -50%); border: 0; border-radius: 50%; background: #0089ff; color: #fff; cursor: pointer; box-shadow: 0 4px 18px rgba(0,0,0,.35); }
+  .video-caja .vsl-iniciar::after { content: ''; display: block; width: 0; height: 0; margin: 0 auto; border-top: 11px solid transparent; border-bottom: 11px solid transparent; border-left: 16px solid #fff; transform: translateX(2px); }
+  .video-caja .vsl-iniciar[hidden] { display: none; }
   .video-caja .plyr--video .plyr__control[data-plyr="settings"],
   .video-caja .plyr--video .plyr__control[data-plyr="pip"],
   .video-caja .plyr--video .plyr__control[data-plyr="captions"],
@@ -293,10 +296,14 @@
   (function () {
     if (!VSL_URL) return;
     var caja = document.getElementById('vsl');
-    caja.innerHTML = '<video playsinline poster="https://incredible-kleicha-dbec41.netlify.app/media/thumbnail.jpg"><source src="' + VSL_URL + '" type="video/mp4"></video><div class="vsl-progreso" aria-hidden="true"><i></i></div>';
+    caja.innerHTML = '<video playsinline poster="https://incredible-kleicha-dbec41.netlify.app/media/thumbnail.jpg"><source src="' + VSL_URL + '" type="video/mp4"></video><button type="button" class="vsl-iniciar" aria-label="Iniciar vídeo"></button><div class="vsl-progreso" aria-hidden="true"><i></i></div>';
     var videoEl = caja.querySelector('video');
+    var iniciar = caja.querySelector('.vsl-iniciar');
     var progresso = caja.querySelector('.vsl-progreso i');
     videoEl.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+    iniciar.addEventListener('click', function () { videoEl.play().catch(function () {}); });
+    videoEl.addEventListener('play', function () { iniciar.hidden = true; });
+    videoEl.addEventListener('pause', function () { if (!videoEl.ended) iniciar.hidden = false; });
     var player = new Plyr(videoEl, {
       controls: ['play', 'progress', 'fullscreen'],
       settings: [],
